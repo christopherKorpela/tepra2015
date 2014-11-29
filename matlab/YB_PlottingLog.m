@@ -28,23 +28,23 @@ clear fileToRead1 PathName FileName
 x = Log(:,2);
 gas_actual = Log(:,3);
 figure(1)
-fit1 = polyfit(x, gas_actual, 1);
-plot(x, gas_actual, 'o', x, fit1(1)*x+fit1(2));
+fit1 = polyfit(x(2:end), log(gas_actual(2:end)), 1);
+semilogy(x, gas_actual, 'o', x, exp(fit1(2)).*exp(fit1(1)*x));
 hold on; grid on;
 % With 24 hour preheat
 title('Methane(CH4) Test1')
-legend('Gas (Actual)','Gas (Fitted)');
+legend('Gas (Actual)',['Gas (Fitted) y=e^{',num2str(fit1(2)),'}*e^{',num2str(fit1(1)),'x}']);
 xlabel('Sensor Output [raw]');
 ylabel('Gas Concentration [ppm]');
 hold off
 
 lethal = Log(:,5);
 figure(2)
-fit2 = polyfit(x, lethal, 1);
-plot(x, lethal, 'o', x, fit2(1)*x+fit2(2));
+fit2 = polyfit(x(4:end), log(lethal(4:end)), 1);
+semilogy(x, lethal, 'o', x, exp(fit2(2)).*exp(fit2(1)*x));
 hold on; grid on;
 title('Methane(CH4) - Toxic Level Test1')
-legend('Gas (Actual)','Gas (Fitted)');
+legend('Gas (Actual)',['Gas (Fitted) y=e^{',num2str(fit2(2)),'}*e^{',num2str(fit2(1)),'x}']);
 xlabel('Sensor Output [raw]');
 ylabel('Gas Concentration [ppm]');
 hold off
