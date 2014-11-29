@@ -1,0 +1,26 @@
+\section{Chassis Design}\label{sec:chassis}
+
+The iRobot PackBot is a fielded small robot used primarily for bomb disposal. The design is ``semi-modular'' where payloads can be installed to the base chassis, but they can only be installed in specific configurations, and when the software is properly configured. The integration of new payloads is often difficult and expensive. The vehicle uses military BB-2590 Li-Ion rechargeable batteries. While they have been widely deployed to both Iraq and Afghanistan, the Packbot is very expensive to purchase and maintain and overall reliability has been a challenge. There are two different generations: the obsolete 500 version and the current production 510 version. Many parts are interchangeable between the two models. The U.S. Army has discontinued the Packbot and no longer supports it as a program of record.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.48\textwidth]{./pictures/packbot.png}
+	\caption{Anatomy of the Packbot.}
+	\label{fig:packbot}
+\end{figure}
+
+With a large inventory of unused and unsupported robots, the RS-JPO (Robotic Systems Joint Program Office) funded a 12 month effort to implement IOP (Interoperability Profile V2, using JAUS which is the Joint Architecture for Unmanned Systems). Creating a kit design for retrofitting all fielded PackBots would reduce costs of maintaining the aged fleet. The standardized version of the PackBot makes a good research platform for a number of reasons:
+\begin{itemize}
+	\item Open architecture
+	\item Design is completely government-owned
+	\item Designed for IOP V1 compliance
+	\item Cost relatively low
+\end{itemize}
+The research platform became known as GVR-Bot (Ground Vehicle Robotics is a branch of TARDEC). It changed the radio frequency to 2.4 GHz so it could easily connect over standard existing wireless Internet protocols. All of the internal electronics of the robot were replaced with new motherboards, interface boards, and motor controllers. Bootloaders were added to the internal control boards (allowing flashing of all the software without disassembling the robot). See Fig. \ref{fig:pcb} for an example circuit board.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.48\textwidth]{./pictures/pcb.jpg}
+	\caption{Front assembly interface board.}
+	\label{fig:pcb}
+\end{figure}

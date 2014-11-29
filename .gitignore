@@ -1,0 +1,7 @@
+*.log
+*.aux
+*.blg
+*.synctex.gz
+*.bst
+*.bak
+IROS2014.pdf

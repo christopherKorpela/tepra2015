@@ -1,0 +1,102 @@
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}
+
+\IEEEoverridecommandlockouts
+\overrideIEEEmargins              
+
+\usepackage{cite}
+\usepackage[pdftex]{graphicx}
+\graphicspath{pictures/}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.png,.eps}
+\usepackage{epstopdf}
+\usepackage[cmex10]{amsmath}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{dblfloatfix}
+\usepackage{fixltx2e}
+\usepackage{color}
+\usepackage{verbatim}
+%\usepackage{algorithm2e}
+%%\usepackage{algorithmicx}
+%\makeatletter
+%\newcommand{\removelatexerror}{\let\@latex@error\@gobble}
+%\makeatother
+
+%\hyphenation{op-tical net-works semi-conduc-tor}
+
+\input{content/title}
+
+\input{content/authors}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract
+\input{content/abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introduction
+\input{content/introduction}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Hardware
+\input{content/hardware}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: User Interface
+\input{content/ui}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Recharge
+\input{content/recharging}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Valve turning
+%\input{content/valve_turning}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Valve
+%\input{content/valve_features}
+%\input{content/valve_detection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Model
+%\input{content/model}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Model
+%\input{content/coupling}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Control
+%\input{content/control}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Validation
+%\input{content/validation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Section: Results
+\input{content/results}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conclusions
+\input{content/conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\addtolength{\textheight}{0cm}  % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{bibliography/IEEEtran}
+\bibliography{bibliography/IEEEabrv,bibliography/bibliography}
+
+\end{document}

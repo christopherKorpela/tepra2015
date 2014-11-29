@@ -1,0 +1,84 @@
+\section{Modeling}\label{sec:model}
+%The rigid body dynamics of rotorcraft are well understood \cite{Hoffmann2007}, \cite{Mahoney2012}. 
+Much of the previous work in quadrotor control assumes the geometric center and quadrotor center of mass are coincident. With the introduction of two manipulators used for valve turning, the center of mass shifts and the inertia properties change based on arm joint angles and environmental contact forces and torques.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\textwidth]{./pictures/MMUAS}
+	\caption{Coordinate System (links expanded for clarity). 4 DOFs are shown for each arm to indicate a future arm design.}
+	\label{fig:ref-frame}
+\end{figure}
+
+\subsection{Aircraft-Arm Kinematics}
+%A generalized 6-DOF vehicle model is proposed. 
+The coordinate system for the aircraft-arm system is shown in Fig.~\ref{fig:ref-frame}.
+%The world inertial frame $W$ is fixed and the body reference frame $B$ is placed at the vehicle center of mass as shown in Fig.~\ref{fig:ref-frame}. 
+The position and orientation of the body frame %with respect to the inertial reference frame 
+can be expressed in standard form as $p_b = [x \; y \; z]^T$ and $\phi_b = [\psi \; \theta \; \varphi]^T$ where the frames are right-handed with $Z$ pointed upward. Attitude is denoted by the yaw-pitch-roll Euler angles in the body frame ($Z\,Y\,X$). %The inertial frame is rotated by $R_b \in SO(3)$ to provide the orientation of the body frame.
+
+%\begin{equation}
+%	R_b(\phi_b) =
+%	\begin{bmatrix}
+%		c_{\psi}c_{\theta} & c_{\psi}s_{\theta}s_{\varphi}-s_{\psi}c_{\varphi}  & c_{\psi}s_{\theta}c_{\varphi}+s_{\psi}s_{\varphi} \\
+%		s_{\psi}c_{\theta} & s_{\psi}s_{\theta}s_{\varphi}+c_{\psi}c_{\varphi} & s_{\psi}s_{\theta}c_{\varphi}-c_{\psi}s_{\varphi} \\
+%		-s_{\theta}             & c_{\theta}s_{\varphi}                                              & c_{\theta}c_{\varphi} \\
+%	\end{bmatrix}
+%\end{equation}
+
+The manipulators (noted as arms A and B with links $L_i$) are symmetrical and attached below the center of gravity of the quadrotor frame and equally offset from the vehicle's geometric center. Forward kinematics for the two serial chain manipulators are derived using Denavit-Hartenberg (DH) parameters as shown in Table~\ref{tab:DHParameters}. Parameters $\theta$, $d$, $a$, and $\alpha$ are in standard DH convention and  $q_i$ for $i = 1$ to $n$ are joint variables for the arm. The direct kinematics function relating the quadrotor body to the end-effector frame, $p_e$, is:
+
+\begin{equation}
+	p_e = p_b + R_bp^b_{eb}
+\end{equation}
+where $p^b_{eb}$ is the position of the end-effector with respect to the body frame. A similar analysis is performed in \cite{Arleo2013}.
+
+\begin{table}
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Denavit-Hartenberg Parameters for Manipulator}
+	\label{tab:DHParameters}
+	\centering
+	\begin{tabular}{|c||c|c|c|c|}
+	\hline
+	Link & $\theta$ & d & a & $\alpha$\\
+	Number & (rad.) & (mm) & (mm) & (rad.)\\
+	\hline
+	\hline 
+	1 & $q_1$ & 0   & $L_1$ & 0\\
+	2 & $q_2$ & 0   & $L_2$ & 0\\
+	\hline
+	\end{tabular}
+\end{table}
+
+\subsection{Aircraft-Arm Dynamics}
+
+The equations of motion for the center of mass of the geometric center of the generalized 6-DOF vehicle have the standard Newton-Euler form \cite{Bouabdallah2004}:
+
+\begin{subequations}
+	\begin{align}
+	\vec{F} = m_Q\vec{\dot{v}}+\mathbf{\Omega} \times m_Q\vec{v} \\
+\vec{\tau} = \mathbf{I}\dot{\mathbf{\Omega}}+\Omega \times \mathbf{I} \mathbf{\Omega}
+	\end{align}
+\end{subequations}
+where $F$ represents the combination of propeller, aerodynamic, and gravitational forces with vehicle mass, $m_Q$, linear velocity, $v$, linear acceleration, $\dot{v}$, and rotational velocity, $\Omega$. Torque, $\tau$, is calculated from the inertia matrix, $I$, and the rotational velocity and acceleration, $\Omega$ and $\dot{\Omega}$ respectively. The torque and force produced from the quadrotor propellers have to be taken into account. The torque $\vec{\tau}^i$ has two components, one coming from the actual propeller drag $Q$, and the other due to the displacement of the propeller from the center of mass $\Delta\vec{\mathbf{o}}_{CM}^i(q_j)$. In an aerial manipulator system, the center of mass shifts as each joint ($q_j$) of the manipulator rotates and the torque becomes a nonlinear function of the manipulator joint angles:
+
+\begin{subequations}
+\begin{equation}\label{eq:QuadForce}
+\vec{\boldsymbol{F}}_{q}(u)=\sum_{i=1}^{4}\vec{\mathbf{F}}(u)^i\\
+\end{equation}
+\begin{equation}\label{eq:QuadTorque}
+\vec{\boldsymbol{\tau}}_{q}(u,q_j)=\sum_{i=1}^{4}\vec{\mathbf{Q}}(u)^i+\Delta\vec{\mathbf{o}}_{CM}^i(q_j) \times \vec{\mathbf{F}}(u)^i
+\end{equation}
+\end{subequations}
+
+%In a simple scenario, when only a single joint (i.e. $q_2$) moves, the changing moment of inertia term resulting from arm movement can be calculated using the parallel axis theorem. Although simplified, this methodology is a realistic calculation of the moment of inertia where:
+%\begin{equation}\label{eq:inertia}
+%	\textbf{I}=\frac{m{D_2}^2}{12}+\frac{mD_2^2}{4}sin(q_2)^2
+%\end{equation}
+%with $q_2$ as the angle between the axis of rotation and link $D_2$. For the proposed valve turning scenario the applied arm torque onto the quadrotor body is:
+%\begin{equation}\label{eq:torque}
+%	\tau_{manip} = F_{link}D_2sin(\Theta)
+%\end{equation}
+%where $F_{link}$ is the link force experienced by the gripper of the manipulator and $D_2$ is the link distance. This torque is first applied to the 2nd joint, and is consequently applied to the quadrotor body.
+
+%Given the dynamic model for both manipulator and the quadrotor body, a simplified arm model is utilized for the complete system. 
+%Considering simplified dynamics and not accounting for various aerodynamic effects (i.e. blade flapping, ground effect, etc.) experienced during highly dynamic flying maneuvers, it is possible to emulate the aircraft behavior on a 6-DOF gantry system\cite{Korpela2014}. Most of the vehicle's critical motions occur around hover where small angle approximations can be used. Our previous results show that it is possible to emulate the problem of UAV control on a gantry testbed using similar control approaches. In this paper we pursue this path in order to verify and test UAV-like behavior when performing valve turning. %This fact justifies a simplified mathematical model.
