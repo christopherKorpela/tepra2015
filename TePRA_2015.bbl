@@ -24,13 +24,39 @@
 \bibitem{roadmap}
 D.~of~Defense, ``The unmanned systems integrated roadmap fy2011-2036,'' 2011.
 
+\bibitem{Hogg2002}
+R.~Hogg, A.~Rankin, S.~Roumeliotis, M.~McHenry, D.~Helmick, C.~Bergh, and
+  L.~Matthies, ``Algorithms and sensors for small robot path following,'' in
+  \emph{Robotics and Automation, 2002. Proceedings. ICRA '02. IEEE
+  International Conference on}, vol.~4, 2002, pp. 3850--3857 vol.4.
+
 \bibitem{weingarten2005ekf}
 J.~Weingarten and R.~Siegwart, ``Ekf-based 3d slam for structured environment
   reconstruction,'' in \emph{Intelligent Robots and Systems, 2005.(IROS 2005).
   2005 IEEE/RSJ International Conference on}.\hskip 1em plus 0.5em minus
   0.4em\relax IEEE, 2005, pp. 3834--3839.
 
+\bibitem{castellanos2007robocentric}
+J.~A. Castellanos, R.~Martinez-Cantin, J.~D. Tard{\'o}s, and J.~Neira,
+  ``Robocentric map joining: Improving the consistency of ekf-slam,''
+  \emph{Robotics and Autonomous Systems}, vol.~55, no.~1, pp. 21--29, 2007.
+
 \bibitem{webtools}
 http://robotwebtools.org/.
+
+\bibitem{thrun2005probabilistic}
+S.~Thrun, W.~Burgard, and D.~Fox, \emph{Probabilistic robotics}.\hskip 1em plus
+  0.5em minus 0.4em\relax MIT press, 2005.
+
+\bibitem{kohlbrecher2011flexible}
+S.~Kohlbrecher, O.~Von~Stryk, J.~Meyer, and U.~Klingauf, ``A flexible and
+  scalable slam system with full 3d motion estimation,'' in \emph{Safety,
+  Security, and Rescue Robotics (SSRR), 2011 IEEE International Symposium
+  on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp. 155--160.
+
+\bibitem{habbecke2006iterative}
+M.~Habbecke and L.~Kobbelt, ``Iterative multi-view plane fitting,'' in
+  \emph{Int. Fall Workshop of Vision, Modeling, and Visualization}, 2006, pp.
+  73--80.
 
 \end{thebibliography}
