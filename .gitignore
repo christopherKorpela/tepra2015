@@ -4,7 +4,7 @@
 *.synctex.gz
 *.bst
 *.bak
-IROS2014.pdf
+TePRA_2015.pdf
 
 *.dvi
 *.log
@@ -19,4 +19,3 @@ IROS2014.pdf
 *.toc
 *.out
 *~
-

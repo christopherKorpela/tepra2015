@@ -5,27 +5,26 @@ The iRobot PackBot is a fielded small robot used primarily for bomb disposal. Th
 \begin{figure}
 	\centering
 	\includegraphics[width=0.48\textwidth]{./pictures/packbot.png}
-	\caption{Anatomy of the Packbot.}
+	\caption{Anatomy of the GVR-Bot.}
 	\label{fig:packbot}
 \end{figure}
 
-With a large inventory of unused and unsupported robots, the RS-JPO (Robotic Systems Joint Program Office) funded a 12 month effort to implement IOP (Interoperability Profile V2, using JAUS which is the Joint Architecture for Unmanned Systems). Creating a kit design for retrofitting all fielded PackBots would reduce costs of maintaining the aged fleet. The standardized version of the PackBot makes a good research platform for a number of reasons:
+With a large inventory of unused and unsupported robots, the RS-JPO (Robotic Systems Joint Program Office) funded a 12 month effort to implement IOP on the existing Packbot platforms (Interoperability Profile V2, using JAUS which is the Joint Architecture for Unmanned Systems). Creating a kit design for retrofitting all fielded PackBots would reduce costs of maintaining the aged fleet. The standardized version of the PackBot makes a good research platform for a number of reasons:
 \begin{itemize}
 	\item Open architecture
 	\item Design is completely government-owned
 	\item Designed for IOP V1 compliance
 	\item Cost relatively low
 \end{itemize}
-The research platform became known as GVR-Bot (Ground Vehicle Robotics is a branch of TARDEC). It changed the radio frequency to 2.4 GHz so it could easily connect over standard existing wireless Internet protocols. All of the internal electronics of the robot were replaced with new motherboards, interface boards, and motor controllers. Bootloaders were added to the internal control boards (allowing flashing of all the software without disassembling the robot). See Fig. \ref{fig:pcb} for an example circuit board.
 
-\begin{figure}
+The research platform became known as GVR-Bot (Ground Vehicle Robotics is a branch of the Tank Automotive Research Development Engineering Center (TARDEC)) as shown in Fig.~\ref{fig:packbot}. The radio frequency was changed to 2.4 GHz so it could easily connect over standard existing wireless Internet protocols. All of the internal electronics of the robot were replaced with new motherboards, interface boards, and motor controllers. Bootloaders were added to the internal control boards (allowing flashing of all the software without disassembling the robot). See Fig. \ref{fig:pcb} for an example circuit board. The internal computer of the GVR-Bot manages linear and rotational accelerations/velocities of the vehicle, odometry, orientation, battery levels, GPS, and communications among others. The IH vehicle contains an external embedded computer (Intel Core i7) to perform navigation and obstacle avoidance tasks, video monitoring, sensor integration through a microcontroller (Arduino Uno), and collects LIDAR data using a tilting Hokuyo UTM-30LX.   
+
+\begin{figure}[b]
 	\centering
 	\includegraphics[width=0.48\textwidth]{./pictures/pcb.jpg}
-	\caption{Front assembly interface board.}
+	\caption{Front assembly interface board. This printed circuit board and sub-assemblies are part of the complete electrical component redesign of the Packbot.}
 	\label{fig:pcb}
 \end{figure}
 
-
-/%  Add in stuff about lidar and how it moves up and down (pitches on Y) or yaws 180deg on Z (sweeping back-forth) sitting on its side 
-
-/%what about the kind of processing power it has on-board to do this slam crap 
+%  Add in stuff about lidar and how it moves up and down (pitches on Y) or yaws 180deg on Z (sweeping back-forth) sitting on its side 
+%what about the kind of processing power it has on-board to do this slam crap 

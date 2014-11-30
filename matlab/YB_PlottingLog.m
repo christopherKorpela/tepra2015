@@ -28,8 +28,10 @@ clear fileToRead1 PathName FileName
 x = Log(:,2);
 gas_actual = Log(:,3);
 figure(1)
-fit1 = polyfit(x(2:end), log(gas_actual(2:end)), 1);
-semilogy(x, gas_actual, 'o', x, exp(fit1(2)).*exp(fit1(1)*x));
+%fit1 = polyfit(x(2:end), log(gas_actual(2:end)), 1);
+fit1 = polyfit(x(2:end), gas_actual(2:end), 1);
+%semilogy(x, gas_actual, 'o', x, exp(fit1(2)).*exp(fit1(1)*x));
+plot(x, gas_actual, 'o', x, fit1(1)*x+fit1(2));
 hold on; grid on;
 % With 24 hour preheat
 title('Methane(CH4) Test1')
