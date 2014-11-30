@@ -24,11 +24,21 @@
 \bibitem{roadmap}
 D.~of~Defense, ``The unmanned systems integrated roadmap fy2011-2036,'' 2011.
 
+\bibitem{iRobot}
+``{iRobot} packbot,'' \url{http://www.irobot.com}, accessed: 2014-09-4.
+
 \bibitem{Hogg2002}
 R.~Hogg, A.~Rankin, S.~Roumeliotis, M.~McHenry, D.~Helmick, C.~Bergh, and
   L.~Matthies, ``Algorithms and sensors for small robot path following,'' in
   \emph{Robotics and Automation, 2002. Proceedings. ICRA '02. IEEE
   International Conference on}, vol.~4, 2002, pp. 3850--3857 vol.4.
+
+\bibitem{erikson2013}
+P.~B. M. S. J. H. C.~P. Peter~Erickson, Andrew~Weinert and S.~Miller,
+  ``Designing public safety mobile applications for disconnected, interrupted,
+  and low bandwidth communication environments,'' in \emph{IEEE International
+  Conference on Technologies for Homeland Security}.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2013.
 
 \bibitem{weingarten2005ekf}
 J.~Weingarten and R.~Siegwart, ``Ekf-based 3d slam for structured environment
@@ -79,6 +89,11 @@ S.~Kohlbrecher, O.~Von~Stryk, J.~Meyer, and U.~Klingauf, ``A flexible and
   scalable slam system with full 3d motion estimation,'' in \emph{Safety,
   Security, and Rescue Robotics (SSRR), 2011 IEEE International Symposium
   on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2011, pp. 155--160.
+
+\bibitem{ABK09}
+P.Abichandani, H.~Benson, and M.~Kam, ``Multi-vehicle path coordination in
+  support of communication,'' in \emph{{Proc. International Conference on
+  Robotics and Automation ({ICRA}'09)}}, Kobe, Japan, May 2009.
 
 \bibitem{habbecke2006iterative}
 M.~Habbecke and L.~Kobbelt, ``Iterative multi-view plane fitting,'' in
