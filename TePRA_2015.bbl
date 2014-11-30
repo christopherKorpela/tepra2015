@@ -24,11 +24,4 @@
 \bibitem{roadmap}
 D.~of~Defense, ``The unmanned systems integrated roadmap fy2011-2036,'' 2011.
 
-\bibitem{Korpela2014}
-C.~Korpela, M.~Orsag, and P.~Oh,
-  ``\BIBforeignlanguage{English}{Hardware-in-the-loop verification for mobile
-  manipulating unmanned aerial vehicles},''
-  \emph{\BIBforeignlanguage{English}{Journal of Intelligent \& Robotic
-  Systems}}, vol.~73, no. 1-4, pp. 725--736, 2014.
-
 \end{thebibliography}
