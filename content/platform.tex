@@ -9,15 +9,15 @@ The iRobot PackBot is a fielded small robot used primarily for bomb disposal \ci
 	\label{fig:packbot}
 \end{figure}
 
-With a large inventory of unused and unsupported robots, the RS-JPO (Robotic Systems Joint Program Office) funded a 12 month effort to implement IOP on the existing Packbot platforms (Interoperability Profile V2, using JAUS which is the Joint Architecture for Unmanned Systems). Creating a kit design for retrofitting all fielded PackBots would reduce costs of maintaining the aged fleet. The standardized version of the PackBot makes a good research platform for a number of reasons:
+With a large inventory of unused and unsupported robots, the RS-JPO (Robotic Systems Joint Program Office) funded a 12 month effort to implement IOP on the existing Packbot platforms (Interoperability Profile V2, using JAUS which is the Joint Architecture for Unmanned Systems). Creating a kit design for retrofitting all fielded PackBots which would reduce costs of maintaining the aged fleet. The standardized version of the PackBot makes for a good research platform due to a number of reasons:
 \begin{itemize}
 	\item Open architecture
 	\item Design is completely government-owned
 	\item Designed for IOP V1 compliance
-	\item Cost relatively low
+	\item Cost is relatively low
 \end{itemize}
 
-The research platform became known as the GVR-Bot (Ground Vehicle Robotics is a branch of TARDEC) as shown in Fig.~\ref{fig:packbot}. The radio frequency was changed to 2.4 GHz so it could easily connect over standard existing wireless Internet protocols. All of the internal electronics of the robot were replaced with new motherboards, interface boards, and motor controllers. Bootloaders were added to the internal control boards (allowing flashing of all the software without disassembling the robot). See Fig. \ref{fig:pcb} for an example printed circuit board. The internal computer of the GVR-Bot manages linear and rotational accelerations/velocities of the vehicle, odometry, orientation, battery levels, GPS, and communications among others. The GVR-Bot used for IH missions contains an external embedded computer (Intel Core i7) to perform navigation and obstacle avoidance tasks, video monitoring, sensor integration through a microcontroller (Arduino Uno), and collects LIDAR data using a tilting Hokuyo UTM-30LX.   
+The research platform became known as the GVR-Bot (Ground Vehicle Robotics is a branch of TARDEC) as shown in Fig.~\ref{fig:packbot}. The radio frequency was changed to 2.4 GHz so it could easily connect over standard and existing wireless Internet protocols. All of the internal electronics of the robot were replaced with new motherboards, interface boards, and motor controllers. Bootloaders were added to the internal control boards, thus allowing all of the software to be flashed without disassembling the robot. See Fig. \ref{fig:pcb} for an example printed circuit board. The internal computer of the GVR-Bot manages linear and rotational accelerations/velocities of the vehicle, odometry, orientation, battery levels, GPS, and communications. The GVR-Bot used for IH missions contains an external embedded computer (Intel Core i7) to perform navigation and obstacle avoidance tasks, video monitoring, sensor integration through a microcontroller (Arduino Uno), and collects LIDAR data using a tilting Hokuyo UTM-30LX.   
 
 \begin{figure}[b]
 	\centering
